@@ -1,14 +1,17 @@
 
 
+# Every element in the Linked List is a Node object
 class Node(object):
     def __init__(self, value = None, next_node = None):
         self.val = value
         self.next_node = next_node
 
+# Singly Linked List
 class SinglyLinkedList(object):
     def __init__(self):
         self.head = None
 
+    # Add an element at the end of the LinkedList
     def add_end(self, node):
         if self.head == None:
             self.head = node
@@ -18,6 +21,7 @@ class SinglyLinkedList(object):
                 current_node = current_node.next_node
             current_node.next_node = node
 
+    # delete the element at the given index of the LinkedList
     def delete_index(self, index):
         traversing_index = 0
         previous_node = None
@@ -43,6 +47,7 @@ class SinglyLinkedList(object):
         previous_node.next_node = successor_node
 
 
+    # delete elements at the end of the LinkedList
     def delete_end(self):
         previous_node = None
         current_node = self.head
@@ -62,7 +67,8 @@ class SinglyLinkedList(object):
             del current_node
             previous_node.next_node = None
         
-
+    # this method is for printing the LinkedList only.
+    # this DOES NOT add functionality to the code, and hence NOT necessary...
     def display(self):
         if self.head:
             nodes = []
